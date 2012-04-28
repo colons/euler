@@ -9,7 +9,7 @@ while True:
     if f == 1:
         break
 
-    if is_prime(f) and big_number % f == 0:
+    if big_number % f == 0 and is_prime(f):
         print f
         break
 

@@ -3,8 +3,7 @@ def is_prime(number):
         return False
 
     for divisor in xrange(2, int(number**.5)+1):
-        factor = number / divisor
-        if number % divisor == 0 and divisor * factor == number:
+        if number % divisor == 0:
             return False
 
     return True
