@@ -10,7 +10,7 @@ def nine(target):
                 if a >= b:
                     break
 
-                if a**2 + b**2 == c**2 and a + b + c == target:
+                if a + b + c == target and a**2 + b**2 == c**2:
                     return a * b * c
 
 print nine(1000)
