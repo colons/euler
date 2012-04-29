@@ -7,3 +7,12 @@ def is_prime(number):
             return False
 
     return True
+q = 100
+
+def factorial(n):
+    f = 1
+    while n != 0:
+        f *= n
+        n -= 1
+
+    return f
