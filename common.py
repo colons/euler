@@ -1,23 +1,17 @@
 def factors(n):
     d = 1
-    fs = []
+    fs = set([])
     sqrt = int(n**0.5)
 
     while d <= sqrt:
         if n % d == 0:
             f = n/d
-            fs.append(d)
-
-            if d == sqrt and f not in fs:
-                fs.append(f)
-            elif d != sqrt:
-                fs.append(f)
+            fs.add(d)
+            fs.add(f)
 
         d += 1
 
     return fs
-
-
 
 def is_prime(number):
     if number == 1:
