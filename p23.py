@@ -27,15 +27,11 @@ while n <= limit:
 
     n += 1
 
-print 'got %i abundants, continuing...' % len(abundants)
-
 sums = set([])
 
 for a in abundants:
     for b in abundants[abundants.index(a):]:
         sums.add(a+b)
-
-print 'got %i sums, continuing...' % len(sums)
 
 n = 1
 s = 0
