@@ -1,6 +1,6 @@
 def factors(n):
     d = 1
-    fs = set([])
+    fs = set()
     sqrt = int(n**0.5)
 
     while d <= sqrt:
@@ -14,7 +14,7 @@ def factors(n):
     return fs
 
 def is_prime(number):
-    if number == 1:
+    if number == 1 or number < 0:
         return False
 
     for divisor in xrange(2, int(number**.5)+1):
