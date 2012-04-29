@@ -7,7 +7,7 @@ while True:
     success = True
 
     for d in pool:
-        if float(n)/d != n/d:
+        if n % d == 0:
             success = False
             break
 
