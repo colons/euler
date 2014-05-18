@@ -1,4 +1,5 @@
-words = {
+ones = {
+    0: '',
     1: 'one',
     2: 'two',
     3: 'three',
@@ -8,36 +9,60 @@ words = {
     7: 'seven',
     8: 'eight',
     9: 'nine',
-    10: 'ten',
-    11: 'eleven',
-    12: 'twelve',
-    13: 'thirteen',
-    14: 'fourteen',
-    15: 'fifteen',
-    16: 'sixteen',
-    17: 'seventeen',
-    18: 'eighteen',
-    19: 'nineteen',
-    20: 'twenty',
-    30: 'thirty',
-    40: 'forty',
-    50: 'fifty',
-    60: 'sixty',
-    70: 'seventy',
-    80: 'eighty',
-    90: 'ninety',
-    100: 'hundred',
-    1000: 'thousand',
+}
+
+teens = {
+    1: 'eleven',
+    2: 'twelve',
+    3: 'thirteen',
+    4: 'fourteen',
+    5: 'fifteen',
+    6: 'sixteen',
+    7: 'seventeen',
+    8: 'eighteen',
+    9: 'nineteen',
+}
+
+tens = {
+    1: 'ten',
+    2: 'twenty',
+    3: 'thirty',
+    4: 'forty',
+    5: 'fifty',
+    6: 'sixty',
+    7: 'seventy',
+    8: 'eighty',
+    9: 'ninety',
 }
 
 
 def wordify(number):
-    number = str(number)
-    length = len(number)
+    number_string = str(number)
 
-    if length == 1:
-        return words[int(number)]
+    if number < 10:
+        return ones[number]
+
+    elif 10 < number < 20:
+        return teens[number-10]
+
+    elif number < 100:
+        return tens[int(number_string[-2])] + wordify(int(number_string[-1]))
+
+    elif number < 1000:
+        hundred_count = wordify(int(number_string[-3])) + 'hundred'
+        if number % 100 == 0:
+            return hundred_count
+        else:
+            return hundred_count + 'and' + wordify(int(number_string[-2:]))
+
+    elif number == 1000:
+        return 'onethousand'
 
 
-for i in xrange(1, 10001):
-    print wordify(i)
+letters = 0
+
+for i in xrange(1, 1001):
+    word = wordify(i)
+    letters += len(word)
+
+print letters
