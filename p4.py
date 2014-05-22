@@ -1,12 +1,4 @@
-def is_palindrome(word):
-    rev = ''
-    for l in word:
-        rev = l+rev
-
-    if rev == word:
-        return True
-    else:
-        return False
+from common import is_palindrome
 
 
 if __name__ == '__main__':

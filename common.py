@@ -13,6 +13,7 @@ def factors(n):
 
     return fs
 
+
 def is_prime(number):
     if number == 1 or number < 0:
         return False
@@ -23,6 +24,7 @@ def is_prime(number):
 
     return True
 
+
 def factorial(n):
     f = 1
     while n > 0:
@@ -30,3 +32,14 @@ def factorial(n):
         n -= 1
 
     return f
+
+
+def is_palindrome(word):
+    rev = ''
+    for l in word:
+        rev = l+rev
+
+    if rev == word:
+        return True
+    else:
+        return False
