@@ -43,3 +43,18 @@ def is_palindrome(word):
         return True
     else:
         return False
+
+
+def is_pandigital_string(string, numerals='123456789'):
+    if len(string) != 9:
+        return False
+
+    for numeral in numerals:
+        if numeral not in string:
+            return False
+
+    return True
+
+
+def is_pandigital(number):
+    return is_pandigital_string(str(number))
