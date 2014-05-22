@@ -1,5 +1,3 @@
-pool = range(100,1000)
-
 def is_palindrome(word):
     rev = ''
     for l in word:
@@ -10,13 +8,17 @@ def is_palindrome(word):
     else:
         return False
 
-palindromes = []
 
-for x, y in [(x, y) for x in pool for y in pool]:
-    product = x * y
-    word = str(product)
+if __name__ == '__main__':
+    pool = range(100, 1000)
 
-    if is_palindrome(word):
-        palindromes.append(product)
+    palindromes = []
 
-print max(palindromes)
+    for x, y in [(x, y) for x in pool for y in pool]:
+        product = x * y
+        word = str(product)
+
+        if is_palindrome(word):
+            palindromes.append(product)
+
+    print max(palindromes)
