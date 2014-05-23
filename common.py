@@ -1,3 +1,6 @@
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+
 def factors(n):
     d = 1
     fs = set()

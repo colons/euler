@@ -1,8 +1,7 @@
-from sys import argv
+from common import alphabet
 
 
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
-with open(argv[-1]) as namefile:
+with open('p22.names.txt') as namefile:
     names = sorted([n.strip('"') for n in namefile.read().split(',')])
 
 
